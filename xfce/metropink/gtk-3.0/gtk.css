@@ -1,0 +1,96 @@
+/* settings.ini */
+
+@define-color base_color #ffffff;
+@define-color bg_color #E6E1C8;
+@define-color selected_bg_color #DEB8B8;
+@define-color selected_fg_color #661844;
+@define-color text_color #111111;
+@define-color fg_color #303030;
+@define-color menu_fg_color #661844;
+@define-color menu_bg_color #ECE9D8;
+@define-color focus_color #F7EEEE;
+@define-color tooltip_bg_color shade(#DEB8B8, 1.15);
+@define-color tooltip_fg_color shade(@focus_color, 0.4);
+
+/* gtkrc colors */
+
+@define-color fg_active @fg_color;
+@define-color fg_insensitive @menu_fg_color;
+@define-color fg_normal @fg_color;
+@define-color fg_prelight @fg_color;
+@define-color fg_selected @menu_fg_color;
+
+@define-color bg_active @selected_bg_color;
+@define-color bg_insensitive @bg_color;
+@define-color bg_normal @bg_color;
+@define-color bg_prelight @selected_bg_color;
+@define-color bg_selected @selected_bg_color;
+
+@define-color base_active @bg_color;
+@define-color base_insensitive @menu_bg_color;
+@define-color base_normal @base_color;
+@define-color base_prelight @bg_color;
+@define-color base_selected @selected_bg_color;
+
+@define-color text_active @fg_normal;
+@define-color text_insensitive @menu_fg_color;
+@define-color text_normal @text_color;
+@define-color text_prelight @fg_color;
+@define-color text_selected @fg_selected;
+
+@define-color light_shadow #ffffff;
+@define-color dark_shadow #999999;
+
+/* custom colors */
+@define-color custom_bg_color @bg_color;
+
+@define-color custom_a_color #FFFFFF;
+@define-color custom_b_color #F4F4F4;
+@define-color custom_c_color #D7D7D7;
+@define-color custom_scrollbar_color #E7E7E7;
+@define-color custom_scrollbar_to_color @bg_color;
+
+/* misc colors used by gtk+ */
+@define-color info_fg_color @fg_prelight;
+@define-color info_bg_color @bg_prelight;
+@define-color warning_fg_color @fg_prelight;
+@define-color warning_bg_color @bg_prelight;
+@define-color question_fg_color @fg_prelight;
+@define-color question_bg_color @bg_prelight;
+@define-color error_fg_color @fg_prelight;
+@define-color error_bg_color @bg_prelight;
+@define-color link_color #aaaaff;
+@define-color success_color #aaffaa;
+@define-color error_color #ffaaaa;
+
+/* theme alias */
+@define-color theme_bg_color @custom_bg_color;
+@define-color theme_fg_color @fg_normal;
+@define-color theme_base_color @base_active;
+@define-color theme_text_color @text_active;
+@define-color theme_selected_bg_color shade(@bg_selected, 1.05);
+@define-color theme_selected_fg_color @fg_selected;
+@define-color theme_tooltip_bg_color @text_selected;
+@define-color theme_tooltip_fg_color @text_normal;
+
+/* window manager colors */
+@define-color wm_bg @theme_bg_color;
+@define-color wm_title_focused shade(@theme_fg_color, 1.2);
+@define-color wm_title_unfocused shade(@theme_fg_color, 2.0);
+@define-color wm_border_focused shade(@theme_bg_color, 0.7);
+@define-color wm_border_unfocused shade(@theme_bg_color, 0.8);
+
+@define-color menu_separator @bg_prelight;
+
+@define-color frame_border_color shade(@theme_bg_color, 0.7);
+
+@define-color check_fg_color @fg_normal;
+@define-color check_border_color #999999;
+@define-color check_border_bg_color @bg_prelight;
+
+/* osd */
+@define-color osd_base #2d2d2d;
+@define-color osd_fg #dcdcdc;
+@define-color osd_bg alpha(@osd_base, 0.8);
+
+@import url("gtk-widgets.css");

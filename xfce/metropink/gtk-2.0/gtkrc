@@ -1,0 +1,246 @@
+gtk-color-scheme = "base_color:#ffffff\nbg_color:#E6E1C8\nselected_bg_color:#DEB8B8\nselected_fg_color:#ECE9D8\ntext_color:#111111\nfg_color:#303030\nmenu_fg_color:#661844\nmenu_bg_color:#A2A2A2\nfocus_color:#F7EEEE"
+
+style "theme-default"
+{
+  GtkButton      ::default_border    = { 0, 0, 0, 0 }
+  GtkRange       ::trough_border     = 0
+  GtkPaned       ::handle_size       = 6
+  GtkRange       ::slider_width      = 14
+  GtkRange       ::stepper_size      = 14
+
+  GtkScrollbar   ::min_slider_length = 30
+  GtkCheckButton ::indicator_size    = 14
+  GtkMenuBar     ::internal-padding  = 0
+  GtkTreeView    ::expander_size     = 14
+  GtkExpander    ::expander_size     = 16
+  GtkScale       ::slider-length     = 24
+
+  GtkButton::inner_border={1,1,0,0}
+  GtkToolbar::internal-padding=0
+  GtkToolbar::space-size=0
+  
+  xthickness = 1
+  ythickness = 1
+
+  fg[NORMAL]        = @fg_color
+  fg[PRELIGHT]      = @fg_color
+  fg[ACTIVE]        = @fg_color
+  fg[SELECTED]      = @base_color
+  fg[INSENSITIVE]   = @menu_bg_color
+
+  bg[NORMAL]        = @bg_color
+  bg[PRELIGHT]      = @selected_bg_color
+  bg[ACTIVE]        = @selected_bg_color
+  bg[SELECTED]	    = @selected_bg_color
+  bg[INSENSITIVE]   = @bg_color
+
+  base[NORMAL]      = @base_color
+  base[PRELIGHT]    = @bg_color
+  base[ACTIVE]      = @bg_color
+  base[SELECTED]    = @selected_bg_color
+  base[INSENSITIVE] = @selected_fg_color
+
+  text[NORMAL]      = @fg_color
+  text[PRELIGHT]    = @fg_color
+  text[ACTIVE]      = @text_color
+  text[SELECTED]    = @text_color
+  text[INSENSITIVE] = @menu_bg_color
+
+  engine "murrine" 
+  {		
+	colorize_scrollbar  = FALSE
+	scrollbarstyle      = 0		
+	contrast = 1.1
+	menubarstyle = 3 
+	menubaritemstyle = 0 
+	listviewheaderstyle = 1 
+   	animation           = FALSE
+	menustyle = 0
+	menuitemstyle = 0
+	listviewstyle = 0
+	scrollbarstyle = 4
+	roundness = 3
+	glazestyle = 0	
+  }
+}
+
+style "theme-wide" = "theme-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "theme-wider" = "theme-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "theme-scrollbar" = "theme-button"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "theme-tasklist" = "theme-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "theme-menu" = "theme-default"
+{
+  xthickness = 2
+  ythickness = 1
+}
+
+style "theme-menu-item" = "theme-default"
+{
+  ythickness = 3
+}
+
+style "theme-menubar-item"
+{
+  ythickness = 3	
+}
+
+style "theme-tree" = "theme-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+
+style "theme-tooltips" = "theme-default"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL]                    = @focus_color
+}
+
+style "theme-progressbar" = "theme-wide"
+{
+  xthickness = 1
+  ythickness = 1
+}
+
+style "theme-panel" = "theme-default" {
+  xthickness = 1
+  ythickness = 1
+}
+
+style "theme-combo" = "theme-button"
+{
+}
+style "theme-frame-title" = "theme-default"
+{
+}
+style "theme-menubar" = "theme-default"
+{
+}
+style "theme-entry" = "theme-wider"
+{
+}
+style "theme-button" = "theme-wider"
+{
+}
+style "theme-notebook" = "theme-wide"
+{
+}
+style "theme-handlebox" = "theme-default" 
+{
+}
+style "theme-arrows" 
+{
+}
+
+style "compact-toolbar" {
+    GtkToolbar::internal-padding = 0
+    xthickness = 1
+    ythickness = 1
+}
+ 
+style "compact-button" {
+    xthickness = 0
+    ythickness = 0
+}
+
+# widget styles
+class "GtkWidget"      style "theme-default"
+class "GtkButton"      style "theme-button"
+class "GtkScale"       style "theme-button"
+class "GtkCombo"       style "theme-button"
+class "GtkArrow"       style "theme-button"
+class "GtkRange"       style "theme-wide"
+class "GtkFrame"       style "theme-wide"
+class "GtkMenu"        style "theme-menu"
+class "GtkEntry"       style "theme-entry"
+class "GtkMenuItem"    style "theme-menu-item"
+class "GtkNotebook"    style "theme-notebook"
+class "GtkProgressBar" style "theme-progressbar"
+class "*MenuBar*"      style "theme-menubar"
+
+class "*Expander"   style "theme-handlebox"
+class "*Paned"   style "theme-handlebox"
+class "*HPaned"   style "theme-handlebox"
+
+widget_class "*<GtkPaned>"   style "theme-handlebox"
+widget_class "*<GtkHPaned>"   style "theme-handlebox"
+widget_class "*<GtkVPaned>"   style "theme-handlebox"
+
+widget_class "*MenuItem.*" style "theme-menu-item"
+widget_class "*MenuBar.*"  style "theme-menubar-item"
+
+# combobox
+widget_class "*.GtkComboBox.GtkButton" style "theme-combo"
+widget_class "*.GtkCombo.GtkButton"    style "theme-combo"
+
+# tooltips
+widget_class "*.tooltips.*.GtkToggleButton" style "theme-tasklist"
+widget "gtk-tooltips" style "theme-tooltips"
+
+# treeview
+widget_class "*.GtkTreeView.GtkButton" style "theme-tree"
+widget_class "*.GtkCTree.GtkButton" style "theme-tree"
+widget_class "*.GtkList.GtkButton" style "theme-tree"
+widget_class "*.GtkCList.GtkButton" style "theme-tree"
+widget_class "*.GtkFrame.GtkLabel" style "theme-frame-title"
+
+# notebook
+widget_class "*.GtkNotebook.*.GtkEventBox" style "theme-notebook"
+widget_class "*.GtkNotebook.*.GtkViewport" style "theme-notebook"
+
+widget_class "*Panel*" style "theme-panel"
+class "*Panel*" style "theme-panel"
+class "*panel*" style "theme-panel"
+class "*Notif*" style "theme-panel"
+class "*notif*" style "theme-panel"
+class "*Tray*" style "theme-panel"
+class "*tray*" style "theme-panel"
+
+# tooltips
+widget_class "*.tooltips.*.GtkToggleButton" style "theme-tasklist"
+widget "gtk-tooltip*" style "theme-tooltips"
+
+# compact toolbar
+class "GtkToolbar" style "compact-toolbar" 
+widget_class "*<GtkToolbar>*<GtkButton>" style "compact-button"
+
+# gedit fix
+widget_class "*edit*Panel*" style "theme-wider"
+
+# xfce desktop transparency
+style "xfdesktop-icon-view"
+{
+        font_name = "bold"
+        XfdesktopIconView::label-alpha = 0
+        XfdesktopIconView::selected-label-alpha = 60
+        fg[NORMAL] = shade (0.9, @selected_fg_color)
+        fg[ACTIVE] = @selected_fg_color
+        engine "murrine"
+        {
+                textstyle = 5
+                text_shade = 0.05
+        }
+}
+widget_class "*XfdesktopIconView*"      style "xfdesktop-icon-view"
+
