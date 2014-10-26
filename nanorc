@@ -2,6 +2,9 @@ set historylog
 set nowrap
 set undo
 
+set tabsize 4
+set tabstospaces
+
 syntax "allrc" "\.?*$"
 ## Possible errors and parameters
 icolor brightwhite "^[[:space:]]*((un)?set|include|syntax|i?color).*$"
