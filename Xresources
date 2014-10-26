@@ -1,0 +1,29 @@
+!! gitk
+!!
+*TkTheme: alt
+
+!! fonts
+!!
+Xft.dpi:                          96
+Xft.hinting:                      true
+Xft.antialias:                    true
+Xft.hintstyle:                    hintslight
+Xft.rgba:                         rgb
+!Xft.lcdfilter: 			  lcddefault
+!*.font:xft:Monospace:pixelsize=10
+
+!! xautolock
+!!
+Xautolock.time: 1
+! top left nothing, top right locks, bottom left disables, bottom right nothing
+Xautolock.corners: 0+-0
+! these times in seconds
+Xautolock.cornerdelay: 3
+Xautolock.cornerredelay: 15
+Xautolock.noclose: true
+Xautolock.locker: xflock4
+
+!! cursor
+!!
+Xcursor.theme: DMZ-White
+!Xcursor.theme: Vanilla-DMZ
