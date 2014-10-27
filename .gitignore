@@ -1,9 +1,84 @@
+*.class
+hs_err_pid*
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# IDE
+.classpath
+.project
+.settings/
+.metadata/
+.livereload
+.idea
+*.iml
+.textmate
+*.sublime-*
+nbactions.xml
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+target/
+bin/
+gen/
+
+# Gradle
+.gradle
+build/
+
+# C
+*.o
+*.dll
+*.so
+*.so.*
+*.dylib
+*.ko
+*.obj
+*.elf
+*.gch
+*.pch
+
+# Mac
+.DS_Store
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+
+# Zip
 *.tar
 *.tar.*
-*.zip
+*.txz
 *.tgz
+*.zip
+*.rar
+*.7z
+
+# Logs
 *.log
 *.log.*
+
+# Extra
+*.*~
+*.DEPLOYED
+*.pydevproject
+.mtj.tmp/
+.cproject
+proguard/
+output/
+tmp/
+*.hprof
 *.sig
-pkg/
-src/
+
+_*
+.*
+!/.gitignore
