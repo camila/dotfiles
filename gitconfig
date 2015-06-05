@@ -1,6 +1,6 @@
 [user]
-    name = $USER
-    email = $USER@users.noreply.github.com
+    name = USER
+    email = USER@users.noreply.github.com
 [credential]
     helper = cache --timeout=86400
 [branch]
@@ -11,6 +11,9 @@
     default = simple
 [gui]
     diffopts = -w
+	fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	spellingdictionary = none
 [guitool "checkout"]
     cmd = git checkout $FILENAME
     needsfile = yes
