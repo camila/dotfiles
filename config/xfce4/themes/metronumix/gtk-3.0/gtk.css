@@ -81,7 +81,7 @@
 @define-color wm_icons_unfocused_prelight @selected_bg_color;
 @define-color wm_icons_unfocused_pressed shade(@selected_bg_color, 0.8);
 
-@define-color check_fg_color @fg_color;
+@define-color check_fg_color #993939;
 @define-color check_border_color #999999;
 @define-color check_border_bg_color @selected_bg_color;
 
