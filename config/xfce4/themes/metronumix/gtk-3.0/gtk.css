@@ -10,8 +10,8 @@
 @define-color text_color #333333;
 @define-color selected_bg_color #CC7878;
 @define-color selected_fg_color #ECE9D8;
-@define-color tooltip_bg_color #EEEEEE;
-@define-color tooltip_fg_color #C27272;
+@define-color tooltip_bg_color #C27272;
+@define-color tooltip_fg_color #EEEEEE;
 
 /* dark color scheme */
 @define-color darkest_bg_color #41464D;
