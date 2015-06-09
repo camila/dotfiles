@@ -1,22 +1,22 @@
 /* desktop itens */
-@define-color desktop_item_fg #eeeeee;
+@define-color desktop_item_fg #feeeee;
 @define-color desktop_item_selected_fg @theme_selected_fg_color;
 @define-color desktop_item_text_shadow alpha(black, 0.8);
 
 /* default color scheme */
-@define-color bg_color #E6E1C8;
+@define-color bg_color #e6e1c8;
 @define-color fg_color #303030;
 @define-color base_color #ffffff;
 @define-color text_color #333333;
-@define-color selected_bg_color #CC7878;
-@define-color selected_fg_color #ECE9D8;
-@define-color tooltip_bg_color #C27272;
-@define-color tooltip_fg_color #EEEEEE;
+@define-color selected_bg_color #cc7878;
+@define-color selected_fg_color #ece9d8;
+@define-color tooltip_bg_color #c27272;
+@define-color tooltip_fg_color #eeeeee;
 
 /* dark color scheme */
-@define-color darkest_bg_color #41464D;
-@define-color dark_fg_color #C9AB93;
-@define-color dark_bg_color #E6E3CD;
+@define-color darkest_bg_color #41464d;
+@define-color dark_fg_color #c9ab93;
+@define-color dark_bg_color #e6e3cd;
 @define-color darkest_fg_color #993939;
 
 /* colormap actually used by the theme, to be overridden in other css files */
@@ -30,8 +30,8 @@
 @define-color theme_tooltip_fg_color @tooltip_fg_color;
 
 /* shadow effects */
-@define-color light_shadow #fff;
-@define-color dark_shadow #000;
+@define-color light_shadow #ffffff;
+@define-color dark_shadow #000000;
 
 /* misc colors used by gtk+ */
 @define-color info_fg_color rgb (58, 135, 173);

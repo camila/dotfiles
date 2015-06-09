@@ -105,7 +105,7 @@
 }
 
 .gtkstyle-fallback:insensitive {
-    background-color: shade(shade(@theme_bg_color, 0.95), 1.05);
+    background-color: shade(@theme_bg_color, 0.95);
     color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
 
@@ -447,7 +447,7 @@ GtkHTML {
 * calendar *
 ************/
 GtkCalendar {
-    padding: 4px;
+    padding: 3px;
     outline-offset: -1px;
 }
 
@@ -461,7 +461,7 @@ GtkCalendar.button,
 GtkCalendar.button:hover,
 GtkCalendar.button:insensitive {
     border-width: 0;
-    background-color: transparent;
+    background-color: alpha(@desktop_item_fg, 0.6);
     background-image: none;
 }
 
@@ -546,7 +546,6 @@ GtkComboBox.combobox-entry .button:insensitive {
  * expander *
 ************/
 GtkExpander {
-    padding: 3px;
     outline-offset: 1px;
 }
 
@@ -706,12 +705,12 @@ GtkInfoBar {
 }
 
 .info .button.close:hover {
-    background-color: alpha(white, 0.2);
+    background-color: alpha(@light_shadow, 0.2);
 }
 
 .info .button.close:active {
     color: @info_fg_color;
-    background-color: alpha(black, 0.1);
+    background-color: alpha(@dark_shadow, 0.1);
 }
 
 .warning {
@@ -759,12 +758,12 @@ GtkInfoBar {
 }
 
 .warning .button.close:hover {
-    background-color: alpha(white, 0.2);
+    background-color: alpha(@light_shadow, 0.2);
 }
 
 .warning .button.close:active {
     color: @warning_fg_color;
-    background-color: alpha(black, 0.1);
+    background-color: alpha(@dark_shadow, 0.1);
 }
 
 .question {
@@ -812,12 +811,12 @@ GtkInfoBar {
 }
 
 .question .button.close:hover {
-    background-color: alpha(white, 0.2);
+    background-color: alpha(@light_shadow, 0.2);
 }
 
 .question .button.close:active {
     color: @question_fg_color;
-    background-color: alpha(black, 0.1);
+    background-color: alpha(@dark_shadow, 0.1);
 }
 
 .error {
@@ -865,12 +864,12 @@ GtkInfoBar {
 }
 
 .error .button.close:hover {
-    background-color: alpha(white, 0.2);
+    background-color: alpha(@light_shadow, 0.2);
 }
 
 .error .button.close:active {
     color: @error_fg_color;
-    background-color: alpha(black, 0.1);
+    background-color: alpha(@dark_shadow, 0.1);
 }
 
 /*******************
@@ -1219,7 +1218,7 @@ GtkPopover {
     background-image: none;
     background-color: @menu_bg_color;
     color: @menu_fg_color;
-    box-shadow: 0 2px 3px alpha(black, 0.5);
+    box-shadow: 0 2px 3px alpha(@dark_shadow, 0.5);
 }
 
 GtkPopover.background {
@@ -1232,7 +1231,7 @@ GtkPopover:backdrop {
 }
 
 GtkPopover.osd {
-    box-shadow: 0 2px 7px 3px alpha(black, 0.5);
+    box-shadow: 0 2px 7px 3px alpha(@dark_shadow, 0.5);
 }
 
 GtkPopover > .list,
@@ -1513,7 +1512,7 @@ GtkModelButton.button:selected {
     border-left: 0;
     border-right: 0;
     /* using box shadows instead of borders due to slanted edges */
-    box-shadow: inset 0 3px alpha(black, 0.03), inset 0 2px alpha(black, 0.03), inset 0 1px alpha(black, 0.03),
+    box-shadow: inset 0 3px alpha(@dark_shadow, 0.03), inset 0 2px alpha(@dark_shadow, 0.03), inset 0 1px alpha(@dark_shadow, 0.03),
                 inset 1px 0 shade(@theme_base_color, 0.7), inset -1px 0 shade(@theme_base_color, 0.7);
 }
 
@@ -1521,7 +1520,7 @@ GtkModelButton.button:selected {
     background-color: shade(@theme_base_color, 0.90);
     border-left: 0;
     border-right: 0;
-    box-shadow: inset 0 3px alpha(black, 0.03), inset 0 2px alpha(black, 0.03), inset 0 1px alpha(black, 0.03),
+    box-shadow: inset 0 3px alpha(@dark_shadow, 0.03), inset 0 2px alpha(@dark_shadow, 0.03), inset 0 1px alpha(@dark_shadow, 0.03),
                 inset 1px 0 shade(@theme_base_color, 0.75), inset -1px 0 shade(@theme_base_color, 0.75);
 }
 
@@ -1581,8 +1580,8 @@ GtkProgressBar {
     border-style: solid;
     border-color: shade(@theme_selected_bg_color, 0.9);
     background-color: @theme_selected_bg_color;
-    background-image: linear-gradient(to bottom,
-                                      @theme_selected_bg_color,
+    background-image: linear-gradient(to right,
+                                      mix(@theme_selected_bg_color, @desktop_item_fg, 0.3),
                                       @theme_selected_bg_color
                                       );
 }
@@ -2193,7 +2192,7 @@ GtkColorSwatch,
 GtkColorSwatch:selected {
     border-width: 1px;
     border-style: solid;
-    border-color: alpha(black, 0.1);
+    border-color: alpha(@dark_shadow, 0.1);
     border-radius: 1px;
     background-color: transparent;
     background-clip: border-box;
@@ -2201,7 +2200,7 @@ GtkColorSwatch:selected {
 
 GtkColorSwatch:hover,
 GtkColorSwatch:selected:hover {
-    border-color: alpha(black, 0.3);
+    border-color: alpha(@dark_shadow, 0.3);
 }
 
 GtkColorSwatch.color-dark:hover {
@@ -2243,13 +2242,13 @@ GtkColorSwatch.bottom {
 
 GtkColorChooserWidget #add-color-button {
     background-clip: padding-box;
-    border-color: alpha(black, 0.1);
+    border-color: alpha(@dark_shadow, 0.1);
     background-color: shade(@theme_bg_color, 0.95);
     color: @theme_fg_color;
 }
 
 GtkColorChooserWidget #add-color-button:hover {
-    border-color: alpha(black, 0.3);
+    border-color: alpha(@dark_shadow, 0.3);
     background-color: shade(@theme_bg_color, 0.90);
     color: @theme_fg_color;
 }
@@ -2264,14 +2263,14 @@ GtkColorChooserWidget #add-color-button:hover {
 
 .color-active-badge.color-light,
 .color-active-badge.color-light:hover {
-    border-color: alpha(black, 0.3);
-    color: alpha(black, 0.3);
+    border-color: alpha(@dark_shadow, 0.3);
+    color: alpha(@dark_shadow, 0.3);
 }
 
 .color-active-badge.color-dark,
 .color-active-badge.color-dark:hover {
-    border-color: alpha(white, 0.3);
-    color: alpha(white, 0.3);
+    border-color: alpha(@light_shadow, 0.3);
+    color: alpha(@light_shadow, 0.3);
 }
 
 GtkColorEditor GtkColorSwatch {
@@ -2281,7 +2280,7 @@ GtkColorEditor GtkColorSwatch {
 GtkColorEditor GtkColorSwatch.color-dark:hover,
 GtkColorEditor GtkColorSwatch.color-light:hover {
     background-image: none;
-    border-color: alpha(black, 0.3);
+    border-color: alpha(@dark_shadow, 0.3);
 }
 
 GtkColorButton.button {

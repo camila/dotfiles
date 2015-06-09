@@ -644,9 +644,8 @@ BirdieWidgetsTweetList * {
 *********/
 .panel {
     background-color: transparent;
-    color: white;
+    color: @light_shadow;
     font-weight: bold;
-    text-shadow: 0 1px 2px alpha (black, 0.5);
     icon-shadow: 0 1px 2px alpha (black, 0.5);
 }
 
@@ -665,7 +664,7 @@ BirdieWidgetsTweetList * {
 
 .composited-indicator {
     background-color: transparent;
-    color: white;
+    color: @light_shadow;
     padding: 0 2px;
 }
 
