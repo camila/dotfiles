@@ -15,8 +15,8 @@ Xft.rgba:                         rgb
 !! xautolock
 !!
 Xautolock.time: 1
-! top left nothing, top right locks, bottom left disables, bottom right nothing
-Xautolock.corners: 0+-0
+! top left locks, top right nothing, bottom left disables, bottom right nothing
+Xautolock.corners: +0-0
 ! these times in seconds
 Xautolock.cornerdelay: 3
 Xautolock.cornerredelay: 15
