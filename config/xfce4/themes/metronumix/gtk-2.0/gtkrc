@@ -19,7 +19,7 @@ style "murrine-default" {
 
     GtkScrollbar::min_slider_length = 30
     GtkScrollbar::activate-slider = 1
-    GtkScrollbar::slider-width = 10
+    GtkScrollbar::slider-width = 9
     GtkScrollbar::trough-border = 0
     GtkScrollbar::has-backward-stepper = 0
     GtkScrollbar::has-forward-stepper = 1
@@ -195,7 +195,7 @@ style "murrine-button"  = "murrine-wider" {
 }
 
 style "murrine-overlay-scrollbar" {
-    bg[ACTIVE] = shade (0.8, @bg_color)
+    bg[ACTIVE] = shade (0.9, @bg_color)
     bg[INSENSITIVE] = shade (0.97, @bg_color)
 
     base[SELECTED] = shade (0.6, @selected_fg_color)
@@ -435,7 +435,7 @@ style "murrine-separator-menu-item" = "murrine-thin" {
         menustyle = 0
         menuitemstyle = 0
         listviewstyle = 0
-        scrollbarstyle = 4
+        scrollbarstyle = 2
         roundness = 3
         glazestyle = 0
     }
@@ -835,10 +835,18 @@ style "murrine-scrollbar" {
 
     engine "murrine" {
         roundness = 0
-        contrast = 0.0
-        border_shades = { 0.9, 0.9 }
-        trough_shades = { 0.97, 0.97 }
-        trough_border_shades = { 1.0, 1.0 }
+        gradient_shades     = {1.0,1.0,1.0,1.0}
+        highlight_shade     = 1.0
+        glow_shade          = 1.0
+        reliefstyle         = 0
+        gradient_colors     = FALSE
+        lightborder_shade   = 1.0
+        lightborderstyle    = 0
+        trough_shades       = { 5.0, 1.20}
+        border_shades       = { 2.0, 2.0}
+        contrast            = 0.0
+        prelight_shade      = 0.65
+        contrast            = 0.0
     }
 }
 
