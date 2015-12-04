@@ -136,6 +136,7 @@ bindsym $mod+Shift+h exec "exo-open http://i3wm.org/docs/keyboard-layer2.png"
 
 # toggle border
 bindsym $mod+Shift+x [class="^.*"] border toggle
+bindsym $mod+x border toggle
 
 ##
 ## mouse settings
@@ -160,7 +161,6 @@ bindsym button8 move right
 
 bindsym $mod+0 mode "$mode_system"
 bindsym $mod+r mode "resize"
-bindcode $ctrl+66 mode "no_caps"
 
 # Set shut down, restart and locking features
 set $mode_system (l)ock, (e)xit, (r)eboot, (h)alt
@@ -192,17 +192,13 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# disable caps
-mode "no_caps" {
-    bindcode 66 exec --no-startup-id setxkbmap -option ctrl:nocaps;mode "default"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $ctrl+bracketleft mode "default"
-    bindcode $ctrl+66 mode "default"
-}
-
 # put YouTube into fullscreen and execute this for media mode
 bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 1515 20
+bindsym $mod+Shift+s resize set 400 400
+bindsym $mod+Shift+t sticky toggle
+
+# logout
+bindsym $mod+Control+Delete exec --no-startup-id i3exit logout, mode "default"
 
 #====================
 #  window settings
@@ -211,7 +207,7 @@ bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky e
 no_focus [window_role="pop-up"]
 
 # display titlebar
-for_window [window_role="browser"] border normal
+for_window [window_role="browser"] border 1pixel
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -220,30 +216,17 @@ for_window [urgent=latest] focus
 #for_window [class="^.*"] border pixel 1
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 2
-for_window [class="Calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 2
 for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="manjaro-settings-manager-gui"] floating enable border normal
 for_window [class="Manjaro Welcome"] floating enable
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
 for_window [class="Pamac-manager"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
-for_window [class="Thus"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
 
 # other floating windows
 for_window [class="Mirage"] floating enable
@@ -256,7 +239,7 @@ for_window [Title="Note[.]*"] floating enable
 for_window [class="Thunar"] floating enable
 
 # xfce no-float
-for_window [title="Terminal"] floating disable border normal
+for_window [title="Terminal"] floating disable border 1pixel
 for_window [class="[.]*notifyd"] floating enable border none
 
 #===============
@@ -294,6 +277,9 @@ exec --no-startup-id xfce4-clipman
 # optional apps (disabled)
 # exec --no-startup-id gnome-keyring-daemon --start
 # exec --no-startup-id blueman
+
+# disable caps
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 ##
 ## xrandr
