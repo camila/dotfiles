@@ -99,7 +99,7 @@ bindsym $mod+a focus parent
 
 # function keys
 bindsym $mod+F1 exec "exo-open http://i3wm.org/docs/refcard.html"
-bindsym $mod+F2 exec --no-startup-id "xfce4-appfinder --collapsed"
+bindsym $mod+F2 exec --no-startup-id "xfce4-appfinder -r"
 bindsym $mod+F3 exec "exo-open ~"
 bindsym $mod+F4 exec "i3-sensible-editor"
 
@@ -237,7 +237,7 @@ for_window [class="(?i)Orage"] floating enable border normal
 # xfce floating windows
 for_window [window_role="[.]+"] floating enable border normal
 for_window [class="Xf[.]*"] floating enable border normal
-for_window [Title="Note[.]*"] floating enable
+for_window [Title="Note[.]*"] floating enable border 1pixel
 for_window [class="Thunar"] floating enable
 
 # xfce no-float
@@ -283,6 +283,8 @@ exec --no-startup-id xfce4-clipman
 # disable caps
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 
+exec --no-startup-id xfce4-notes
+
 ##
 ## xrandr
 ##
@@ -315,7 +317,7 @@ bar {
 
 ##
 ## bg gradient
-## 
+##
 exec_always --no-startup-id hsetroot -add "#777777" -add "#111111" -gradient "180"
 
 #EOF
