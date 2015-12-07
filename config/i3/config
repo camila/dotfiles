@@ -208,6 +208,8 @@ no_focus [window_role="pop-up"]
 
 # display titlebar
 for_window [window_role="browser"] border 1pixel
+for_window [class="google-chrome" window_role="app"] floating enable border normal
+for_window [instance="chrome_app_list" window_role="bubble"] floating enable border normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
