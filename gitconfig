@@ -3,12 +3,10 @@
     email = USER@users.noreply.github.com
 [credential]
     helper = cache --timeout=86400
-[branch]
-    autosetuprebase = always
 [pull]
-    rebase = preserve
-[push]
-    default = simple
+    ff = only
+[merge]
+    tool = meld
 [gui]
     diffopts = -w
 	fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
@@ -17,17 +15,7 @@
 [guitool "checkout"]
     cmd = git checkout $FILENAME
     needsfile = yes
-[merge]
-    tool = diffuse
-    ff = false
-[diff]
-    guitool = diffuse
-    tool = diffuse
 [alias]
     count = !git shortlog -sn
     l     = log --pretty=format:'%Cblue[%ai] %Cred%h %Cgreen%ae%Creset: %s %Cred%d%Creset' --since=2.weeks -M --name-status
-    lg    = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    ll    = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate --numstat
-    lga   = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lla   = log --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate --numstat
     st    = status -s
