@@ -1,0 +1,43 @@
+conky.config = {
+	background = true,
+	update_interval = 2,
+	cpu_avg_samples = 3,
+	net_avg_samples = 3,
+	out_to_console = false,
+	override_utf8_locale = true,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 32768,
+	imlib_cache_size = 0,
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_argb_visual = true,
+	own_window_argb_value = 120,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	draw_shades = true,
+	draw_outline = true,
+	draw_borders = true,
+	draw_graph_borders = true,
+	use_xft = true,
+	font = 'Ubuntu Mono:size=12',
+	xftalpha = 0.8,
+	uppercase = false,
+	default_color = '#999999',
+	own_window_colour = '#000000',
+	border_width = 1,
+	minimum_width = 200,
+	minimum_height = 0,
+	maximum_width = 200,
+	xinerama_head = 2,
+	alignment = 'top_right',
+};
+
+conky.text = [[
+${font FontAwesome}${font} ${color #999999}${time %d/%m/%y}${color}      ${font FontAwesome}${font} ${color #FFFFFF}${time %H:%M}${color}
+${hr}
+RAM: $memperc% ${membar 5}
+Swap:$swapperc% ${swapbar 5}
+CPU: $cpu% ${cpubar 5}
+CPU Temp: ${acpitemp}C
+/       ${fs_used /}/${fs_size /}${alignr}${fs_used_perc /}%
+]];
