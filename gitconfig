@@ -1,21 +1,31 @@
 [user]
-    name = USER
-    email = USER@users.noreply.github.com
+  name = USER
+  email = USER@users.noreply.github.com
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+[pull]
+  ff = only
+  rebase = true
 [credential]
     helper = cache --timeout=86400
-[pull]
-    ff = only
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
-    tool = meld
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 [gui]
-    diffopts = -w
-	fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	spellingdictionary = none
+  diffopts = -w
+  fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+  fontdiff = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+  spellingdictionary = none
 [guitool "checkout"]
-    cmd = git checkout $FILENAME
-    needsfile = yes
-[alias]
-    count = !git shortlog -sn
-    l     = log --pretty=format:'%Cblue[%ai] %Cred%h %Cgreen%ae%Creset: %s %Cred%d%Creset' --since=2.weeks -M --name-status
-    st    = status -s
+  cmd = git checkout $FILENAME
+  needsfile = yes
